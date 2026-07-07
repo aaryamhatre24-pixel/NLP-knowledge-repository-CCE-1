@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section B: Comparison - NLP Repository</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo"><a href="index.html" style="color:inherit; text-decoration:none;">NLP Repository</a></div>
+        <ul class="nav-links">
+<li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="SectionA.html" class="nav-item">Section A: Concepts</a></li>
+            <li><a href="SectionB.html" class="nav-item active">Section B: Comparison</a></li>
+            <li><a href="SectionC.html" class="nav-item">Section C: Workflows</a></li>
+            <li><a href="SectionD.html" class="nav-item">Section D: Applications</a></li>
+            <li><a href="SectionE.html" class="nav-item">Section E: Research</a></li>
+<li><a href="ComparisonMatrix.html" class="nav-item">Contribution Matrix</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container">
+        <header>
+            <h1>Architectural <span>Comparative Analysis</span></h1>
+            <p class="subtitle">Section B: Structural and Computational Flows with Downward Dependencies</p>
+        </header>
+
+        <div class="author-badge">Aarya Yugant Mhatre</div>
+        <h2>1. Stemming vs Lemmatization</h2>
+        
+        <div class="comparison-flow">
+            <div class="comp-element">
+                <div class="comp-box-wrapper">
+                    <div class="comp-node">
+                        <h4>Stemming Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Algorithmic truncation slicing word endings heuristics.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> Low; $O(n)$ operations.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Fast; minimal storage footprint.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Truncates to invalid terms (e.g., "studi").</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Search indices, high-speed lookup feeds.</div>
+                    </div>
+                    <div class="comp-node">
+                        <h4>Lemmatization Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Full lexicon check using POS structural filters.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> High; dictionary query processing.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Keeps valid dictionary base forms.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Resource heavy; slower overall throughput.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Chatbots, advanced question answering systems.</div>
+                    </div>
+                </div>
+                <div class="comp-flow-arrow">▼</div>
+                <div style="background: rgba(0, 243, 255, 0.05); border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Flow Transition Insight:</strong> Moving from Stemming to Lemmatization introduces structural context knowledge, transforming simple suffix removal operations into fully grammatical mapping nodes.
+                </div>
+            </div>
+
+            <h2>2. TF vs TF-IDF Flows</h2>
+            <div class="comp-element" style="margin-top: 20px;">
+                <div class="comp-box-wrapper">
+                    <div class="comp-node">
+                        <h4>TF (Term Frequency) Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Tracks localized document frequency counts.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> Linear $O(n)$ relative to text block length.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Reflects internal theme weight directly.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Biased heavily to common background tokens.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Local density tracking maps.</div>
+                    </div>
+                    <div class="comp-node">
+                        <h4>TF-IDF Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Modulates local frequency with log corpus rarity.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> Higher; requires global collection counts.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Downweights global stop-words dynamically.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> High dimension vectors remain sparse.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Search indexing retrieval loops.</div>
+                    </div>
+                </div>
+                <div class="comp-flow-arrow">▼</div>
+                <div style="background: rgba(0, 243, 255, 0.05); border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Flow Transition Insight:</strong> Adding inverse document statistics transforms local counts into global information metrics, isolating distinctive keyword patterns across extensive datasets.
+                </div>
+            </div>
+        </div>
+
+        <div class="author-badge shraddha" style="margin-top: 50px;">Shraddha Sandip Salvi</div>
+        <h2>3. SLM vs NLM</h2>
+
+        <div class="comparison-flow">
+            <div class="comp-element">
+                <div class="comp-box-wrapper">
+                    <div class="comp-node" style="border-color: rgba(57, 255, 20, 0.2)">
+                        <h4 style="color: var(--accent-neon-green)">SLM Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Markov chain parsing using raw N-gram frequencies.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> Low training math; fast hash lookups.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> High visibility math; fast generation tasks.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Severe vocabulary sparsity constraints.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Keyboard autocomplete loops.</div>
+                    </div>
+                    <div class="comp-node" style="border-color: rgba(57, 255, 20, 0.2)">
+                        <h4 style="color: var(--accent-neon-green)">NLM Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Continuous deep matrix propagation pathways.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> High; intensive forward/backward propagation computations.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Excellent generalization capacity across spaces.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Low structural parameters transparency.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Modern translation and conversational tasks.</div>
+                    </div>
+                </div>
+                <div class="comp-flow-arrow" style="color: var(--accent-neon-green); text-shadow: 0 0 10px rgba(57, 255, 20, 0.5)">▼</div>
+                <div style="background: rgba(57, 255, 20, 0.03); border: 1px solid rgba(57, 255, 20, 0.15); padding: 15px; border-radius: 6px; width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Flow Transition Insight:</strong> Shifting from statistical sequences to neural operations maps discrete tokens into continuous vector spaces, allowing models to generalize effectively across synonyms.
+                </div>
+            </div>
+
+            <h2>4. Word2Vec vs FastText Flows</h2>
+            <div class="comp-element" style="margin-top: 20px;">
+                <div class="comp-box-wrapper">
+                    <div class="comp-node" style="border-color: rgba(57, 255, 20, 0.2)">
+                        <h4 style="color: var(--accent-neon-green)">Word2Vec Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Predicts continuous coordinates for whole words.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> Moderate; bounded by core vocabulary indices.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Great linear semantic analogy mappings.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> Fails entirely on out-of-vocabulary terms.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Core word similarity frameworks.</div>
+                    </div>
+                    <div class="comp-node" style="border-color: rgba(57, 255, 20, 0.2)">
+                        <h4 style="color: var(--accent-neon-green)">FastText Node</h4>
+                        <div class="criteria-row"><strong>Mechanism:</strong> Compiles and sums internal character subwords.</div>
+                        <div class="criteria-row"><strong>Complexity:</strong> High; tracks vast subword token tables.</div>
+                        <div class="criteria-row"><strong>Strengths:</strong> Resolves out-of-vocabulary terms and typos.</div>
+                        <div class="criteria-row"><strong>Weaknesses:</strong> High RAM footprints and storage overhead.</div>
+                        <div class="criteria-row"><strong>Suitability:</strong> Complex languages, error-prone user queries.</div>
+                    </div>
+                </div>
+                <div class="comp-flow-arrow" style="color: var(--accent-neon-green); text-shadow: 0 0 10px rgba(57, 255, 20, 0.5)">▼</div>
+                <div style="background: rgba(57, 255, 20, 0.03); border: 1px solid rgba(57, 255, 20, 0.15); padding: 15px; border-radius: 6px; width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Flow Transition Insight:</strong> Incorporating subword character context directly into the embedding layers allows models to construct meaningful vectors for previously unseen terms based on morphological clues.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-controls">
+            <a href="SectionA.html" class="ctrl-btn">Previous Page</a>
+            <a href="SectionC.html" class="ctrl-btn">Next Page</a>
+        </div>
+    </div>
+<div class="page-container" style="margin-top: 50px;">
+        <footer>
+            <div class="footer-title">NLP Repository</div>
+            <div class="footer-subtitle">Shah & Anchor Kutchhi Engineering College</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Autonomous Institute Affiliated to University of Mumbai</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Bestowed with the University of Mumbai's Best College Honor A.Y. 2024-25</p>
+            <p style="margin-bottom: 25px;"><a href="https://www.sakec.ac.in" target="_blank" style="color: var(--accent-neon-blue); text-decoration: none; font-weight: 600;">www.sakec.ac.in</a></p>
+            
+            <h3>AARYA YUGANT MHATRE - 40 - 124BTCM1004 & SHRADDHA SANDIP SALVI - 52 - 124BTCM1064</h3>
+            <p>Under The Guidance of</p>
+            <h3>MS. VANDANA SONI & MS. SHREYASEE PATRA</h3>
+           
+            <div class="footer-meta">
+                <span><strong>Course Code:</strong> CMCOR1PE301.1</span>
+                <span>•</span>
+                <span><strong>Academic Year:</strong> 2026-27</span>
+                <span>•</span>
+                <span><strong>Class:</strong> TY B.Tech</span>
+                <span>•</span>
+                <span><strong>Semester:</strong> V</span>
+            </div>
+
+            <div class="footer-declaration">
+                AI-Assisted Content Generation Declared | All External Sources Cited | Academic Integrity Maintained
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
