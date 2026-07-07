@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section A: Concepts - NLP Repository</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo"><a href="index.html" style="color:inherit; text-decoration:none;">NLP Repository</a></div>
+        <ul class="nav-links">
+<li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="SectionA.html" class="nav-item active">Section A: Concepts</a></li>
+            <li><a href="SectionB.html" class="nav-item">Section B: Comparison</a></li>
+            <li><a href="SectionC.html" class="nav-item">Section C: Workflows</a></li>
+            <li><a href="SectionD.html" class="nav-item">Section D: Applications</a></li>
+            <li><a href="SectionE.html" class="nav-item">Section E: Research</a></li>
+<li><a href="ComparisonMatrix.html" class="nav-item">Contribution Matrix</a></li>
+        </ul>
+    </nav>
+        <div class="page-container">
+        <header>
+            <h1><span>Section A : Concept Cards</span></h1>
+            <p class="subtitle">Section A: Fundamental Architectural Components and Methodologies</p>
+        </header>
+
+        <h2>CONCEPT CARD 1</h2>
+        <div class="author-badge">Aarya Yugant Mhatre</div>
+        <h3>1. Text Preprocessing & Feature Engineering</h3>
+        <div class="concept-grid">
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>a. Sentence Segmentation</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">The process of dividing a continuous block of text into distinct, structural individual sentences.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To establish boundaries in unstructured text bodies, ensuring subsequent workflows handle semantic sentences rather than unstructured streams.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Utilizes rule-based regular expressions (detecting terminal punctuation) paired with unsupervised ML packages (like the Punkt tokenizer) trained to distinguish full-stops from internal abbreviations.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"Hello world! Welcome to NLP." → ["Hello world!", "Welcome to NLP."]</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Crucial structural step for accurate document parsing; prevents boundaries from leaking across separate distinct contexts.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Fails on irregular shorthand, unpunctuated social media logs, and ambiguous domain acronym periods.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Document summarizing frameworks, structural machine translation pipelines, conversational routing frameworks.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>b. Tokenization</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Splitting a sequence of strings into smaller syntactic units called tokens (words, subwords, or characters).</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To isolate the atomic processing building blocks of text for statistical, matrix, or continuous vector operations.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Whitespace tokenization splits strings by spaces. Modern tokenizers (BPE, WordPiece) break words down recursively into subword elements to mitigate out-of-vocabulary anomalies.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"Natural Language Processing" → ["Natural", "Language", "Processing"]</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Standardizes textual inputs; subword variants cleanly handle structural lexical gaps.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Aggressive tokenization scripts can strip key context or isolate idiomatic expressions incorrectly.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Lexical compilation passes, large language model vocabulary building blocks.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>c. Case Normalization</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Converting all structural characters uniformly into a single casing layout, typically lowercased text.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To reduce vocabulary redundancy by matching identical words written with different cases.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Maps character ASCII/Unicode entries directly to lower-case index values during processing.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">["Learning", "LEARNING"] → ["learning", "learning"]</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Shrinks total tracking dimension footprint; guarantees start-of-sentence words map correctly.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Distorts proper nouns and acronyms where case changes the absolute definition (e.g., "US" pronoun vs "US" country).</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Information retrieval indexing setups, lookup engines.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>d. Stop-word Removal</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Filtering out highly frequent structural words that carry minimal unique semantic weight.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To filter out background syntactic noise, isolating high-information tokens.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Compares incoming tokens against a predefined dictionary table list (e.g., "the", "is", "at") and discards matching terms.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"This is sample text" → ["sample", "text"]</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Improves compute pipeline throughput; cuts down feature matrix constraints.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Can disrupt sequence patterns, completely invert sentiment values, or erase relational clues (e.g., "Not good").</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Document categorization matrices, key phrase extraction algorithms.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>e. Stemming</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A crude, fast heuristic sequence that truncates word endings to resolve them to a common baseline root.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To group morphological variants of a word under a single tracking token using algorithmic rules without lookup databases.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Applies structural rule-based processes (such as Porter's or Lancaster's rules) to slice suffix parts (like "-ing", "-ed") sequentially.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"running", "runs" → "run" (while "ran" might parse to "ran").</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Highly efficient; zero dictionary overhead; low execution footprint.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Causes over-stemming mutations (e.g., "universe" and "university" to "univers") or under-stemming discrepancies.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Broad index search applications, live log query parsing setups.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>f. Lemmatization</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A full structural morphological routine that converts a token to its linguistically valid canonical base form (lemma).</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To ensure correct base conversions while preserving structural, grammatical validity.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Cross-references terms against electronic lexical databases (like WordNet) combined with explicit Part-of-Speech context hooks.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"running", "ran", "runs" → "run"</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Linguistically exact; keeps entries readable and structurally valid.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Slower; requires memory-intensive database hooks and contextual analysis passes.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Semantic analysis pipelines, advanced question-answering engines.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>g. Noise Removal</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">The systematic identification and extraction of completely non-textual structural items from raw document bodies.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Cleans out layout formats, web markup code, and metadata that provide no linguistic context.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Applies regular expression patterns and parsing trees to locate and erase markup language sequences.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"&lt;p&gt;Content&lt;/p&gt;" → "Content"</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Keeps structural layout syntax from polluting data statistics patterns.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Poorly structured cleaning patterns risk discarding valid data payloads.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Web scraper pipelines, social media parsing systems.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>h. Text Cleaning</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Fixing typos, removing emoji artifacts, normalizing slang variations, and correcting character encodings.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Converts unpredictable, messy text inputs into standardized data layouts.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Uses lookup translation tables, edit-distance spelling matches, and character set mapping rules (UTF-8).</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"L0ve NLP!! 😊" → "Love NLP"</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Boosts text quality; minimizes out-of-vocabulary bugs caused by spelling inconsistencies.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Risk of over-cleaning, where localized emphasis or nuance is accidentally stripped.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Helpdesk ticket parsing, social feedback analysis platforms.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>2. Feature Engineering</h3>
+        <div class="concept-grid">
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>a. Bag of Words (BoW)</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A vector space representation model that tracks raw word frequencies within a document, completely discarding order and syntax structure.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Converts unstructured raw text inputs into fixed-length numeric vectors for machine learning model pipelines.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Builds a master vocabulary matrix of all unique tokens across a dataset. Each document is mapped to a vector of length V, where each index records the local count of that specific term.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"cat sat cat" → {"cat": 2, "sat": 1}</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Simple to construct; clear to debug; excellent baseline classification feature set.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Suffers from extreme vector sparsity; ignores word positioning ("not bad" and "bad not" output identical representations).</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Spam classification filters, entry-level topic filters.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>b. N-Grams</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A contiguous, sequential tracking sequence of n items or words pulled from a given text profile.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Captures local structural word sequences, phrase combinations, and relational co-occurrences within an index layout.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Slides an operational tracking window of n items across the text stream token-by-token, building linked sequence tuples.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"Deep Learning" (n=2) → Bi-gram: ("Deep", "Learning")</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Preserves critical context pairs (e.g., tracking phrases like "not guilty").</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Vocabulary tracking size scales exponentially as n grows ($V^n$), leading to extreme storage bottlenecks and matrix sparsity.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Next-word predictive systems, language structural identification systems.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>c. TF (Term Frequency)</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A normalized statistical metric tracking how frequently a specific target token occurs within an individual text file.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Quantifies the relative presence or density of a target term inside a localized document file context.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Calculated as the total occurrences of term t divided by the total sum of all tokens inside that target document matrix layout.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">Word "AI" appears 5 times in a 100-word essay → TF = 0.05</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Linear calculation; easily scales based on localized density cues.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Biased toward common structural words like "is", "the", which naturally dominate frequency tables.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Isolated document keyword relevancy tracking passes.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>d. IDF (Inverse Document Frequency)</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A measurement checking how rare or globally unique a target word is across the total corpus database.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Penalizes ubiquitous terms that appear across all files while scaling up the weights of unique keywords.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Computed as the log of the total document count N divided by the count of files containing that target term.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">Total files = 1000. "the" is in all 1000 → IDF = log(1) = 0. "Quantum" is in 10 → IDF = log(100) = 2.</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Filters global noise automatically; extracts highly informative terms.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Requires recalculation across the entire global corpus whenever new document layers are added.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Search relevance systems, information extraction pipelines.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>e. TF-IDF</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">The mathematical product of local Term Frequency and Inverse Document Frequency, yielding a relative statistical weight.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">Represents documents as vectors that balance local occurrence density with global distinctiveness.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Combines both metrics multiplication-style: TF-IDF = TF × IDF.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">TF = 0.05, IDF = 2 → TF-IDF Score = 0.10.</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Balances local density with global rarity; effectively reduces the influence of meaningless stop-words dynamically.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Vectors remain sparse and high-dimensional; fails to capture semantic synonyms (e.g., treats "large" and "huge" as separate, unrelated weights).</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Information retrieval scoring, baseline document recommendation systems.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>CONCEPT CARD 2</h2>
+        <div class="author-badge shraddha">Shraddha Sandip Salvi</div>
+        <h3>1. Language Representation</h3>
+        <div class="concept-grid">
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>a. One-Hot Encoding</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A categorical vector transformation where every unique word in a vocabulary is represented as a distinct binary vector containing a single '1' and all other entries as '0'.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To assign a unique, discrete mathematical coordinate identity to every word inside a known lexicon list.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Given a vocabulary length V, a word is assigned an index i. The representation is a vector of size V×1 with a '1' at index i and '0' everywhere else.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">Vocabulary: ["apple", "banana", "cat"]. Vector for "banana" → [0, 1, 0].</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Extremely straightforward to execute; guarantees zero overlapping representations between words.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Highly inefficient due to vector sparsity; orthogonal geometry means the dot product of any two words is '0', implying "king" and "queen" share exactly zero mathematical similarity.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Categorical initialization passes, baseline network target label parsing layouts.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>b. Word Embeddings</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A collective term for language modeling methodologies where words are mapped to low-dimensional, continuous dense vector spaces.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To capture complex continuous semantic and syntactic relationships in a compressed matrix architecture.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Maps words to a dense continuous vector space of fixed size (e.g., 300 dimensions). Positions are optimized based on contextual co-occurrence patterns, ensuring similar words cluster closely together.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"king" - "man" + "woman" ≈ "queen" expressed within a dense float vector space.</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Highly compact (dense matrices); natively maps geometric distance to word meaning similarity.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Traditional static variations assign a single vector to a word, ignoring multiple meanings (polysemy).</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Neural network input representations, vector-similarity search engines.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>c. Word2Vec</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">A groundbreaking framework utilizing shallow two-layer neural networks to learn static dense word embeddings.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To generate high-quality, dense semantic word vectors efficiently from vast unannotated text corpora.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Offers two architectures: Continuous Bag-of-Words (CBOW), which predicts a target word given context words, and Skip-Gram, which predicts context words given a target word. Uses negative sampling to handle loss calculation.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">Outputs a 300-dimension float array for the word "coffee", clustering it near "tea" and "latte".</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Efficient training on massive datasets; captures excellent linear semantic analogies.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Static representation; cannot dynamically adjust a word's vector representation based on changing surrounding context (e.g., "bank" of a river vs financial "bank").</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Downstream NLP feature generation, recommendation systems.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>d. FastText</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">An extension of the Word2Vec framework developed by Facebook that treats each word as a composite collection of subword character n-grams.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To build resilient embeddings that natively resolve out-of-vocabulary (OOV) terms and capture morphological variations.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Breaks words into subword pieces. The final word vector is computed as the mathematical sum of its constituent subword character n-gram vectors.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">An unseen word "sub-optimal" can still get an accurate vector by summing up sub-components like "sub" and "optimal".</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Cleanly handles out-of-vocabulary words; highly robust to typos, prefixes, and suffixes.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Higher RAM and storage footprint due to tracking massive volumes of internal subword components.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Text classification in morphologically rich languages (e.g., German, Finnish), search queries with frequent typos.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>e. Contextual Embeddings</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Dynamic vector representations where the mathematical vector assigned to a word changes depending on its specific sentence context.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To cleanly solve the issue of polysemy, ensuring identical words have completely distinct vector mappings based on context.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Employs deep multi-layer bidirectional architectures (like Transformers) to read the entire sequence of text at once, dynamically re-weighting a word's vector representation using attention mechanisms.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">"Deposit money in the bank" vs "Sit by the river bank" generate distinct vectors for "bank".</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Captures deep, context-aware semantic nuances; sets the current state-of-the-art benchmark for down-stream tasks.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Extremely high computational overhead; requires modern GPU/TPU infrastructure to run inference.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Modern LLMs, advanced conversational AI, precise semantic search.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>2. Language Models</h3>
+        <div class="concept-grid">
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>a. Statistical Language Models</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Probability distribution models over sequences of words constructed using classic Markov chains and raw frequency counting parameters.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To calculate the absolute likelihood of a sequence of words occurring or to predict the next word in a chain.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Utilizes the chain rule of probability combined with N-gram counts to compute sequence likelihood, applying smoothing techniques to handle unseen text.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">Calculating P("shines" | "the sun") based on text corpus counts.</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Incredibly fast inference; simple mathematical properties; easily interpretable.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Suffers from the "curse of dimensionality"; cannot capture long-range contextual dependencies due to fixed history windows.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Early speech recognition systems, basic predictive keyboard typing systems.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>b. Neural Language Models</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Language modeling architectures that leverage continuous neural network layers (MLPs, RNNs, LSTMs) to learn word probability distributions.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To overcome the sparsity and structural limits of SLMs by processing language within continuous vector spaces.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Passes sequence tokens through embedding layers, processing hidden structural states sequentially through recurrent network connections to predict tokens via Softmax.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">An LSTM network processing a sequence word-by-word to generate predictive text patterns.</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Better generalization across hidden vectors; handles longer history contexts than statistical N-grams.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Sequential processing cannot be parallelized during training stages; prone to vanishing gradients over long sequences.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">Early-stage sequence generation systems, intermediate machine translation engines.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-card shraddha-card">
+                <button class="card-trigger" onclick="toggleCard(this)">
+                    <span>c. Transformer-based Representations</span>
+                    <span class="icon">▼</span>
+                </button>
+                <div class="card-content">
+                    <div class="content-inner">
+                        <div class="info-block"><div class="info-label">Definition</div><div class="info-text">Advanced multi-headed self-attention network architectures that compute highly non-linear, parallelized language representations.</div></div>
+                        <div class="info-block"><div class="info-label">Purpose</div><div class="info-text">To process long-range dependencies efficiently across an entire text sequence simultaneously.</div></div>
+                        <div class="info-block"><div class="info-label">Working Principle</div><div class="info-text">Completely eliminates recurrent loops. Uses positional encodings to track order, and employs multi-head self-attention mechanisms to allow tokens to dynamically weight and connect with every other token in the sequence.</div></div>
+                        <div class="info-block"><div class="info-label">Examples</div><div class="info-text">BERT (encoder-only for parsing) and GPT architecture variants (decoder-only for generative processing).</div></div>
+                        <div class="info-block"><div class="info-label">Advantages</div><div class="info-text">Highly parallelizable across GPUs; captures long-range context across extensive text sequences.</div></div>
+                        <div class="info-block"><div class="info-label">Limitations</div><div class="info-text">Computational and memory complexity scales quadratically ($O(L^2)$) relative to sequence length L without optimization.</div></div>
+                        <div class="info-block"><div class="info-label">Applications</div><div class="info-text">State-of-the-art Large Language Models, semantic text synthesis, deep conversational AI interfaces.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-controls">
+            <a href="index.html" class="ctrl-btn">Previous</a>
+            <a href="SectionB.html" class="ctrl-btn">Next Page</a>
+        </div>
+    </div>
+<div class="page-container" style="margin-top: 50px;">
+        <footer>
+            <div class="footer-title">NLP Repository</div>
+            <div class="footer-subtitle">Shah & Anchor Kutchhi Engineering College</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Autonomous Institute Affiliated to University of Mumbai</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Bestowed with the University of Mumbai's Best College Honor A.Y. 2024-25</p>
+            <p style="margin-bottom: 25px;"><a href="https://www.sakec.ac.in" target="_blank" style="color: var(--accent-neon-blue); text-decoration: none; font-weight: 600;">www.sakec.ac.in</a></p>
+            
+            <h3>AARYA YUGANT MHATRE - 40 - 124BTCM1004 & SHRADDHA SANDIP SALVI - 52 - 124BTCM1064</h3>
+            <p>Under The Guidance of</p>
+            <h3>MS. VANDANA SONI & MS. SHREYASEE PATRA</h3>
+           
+            <div class="footer-meta">
+                <span><strong>Course Code:</strong> CMCOR1PE301.1</span>
+                <span>•</span>
+                <span><strong>Academic Year:</strong> 2026-27</span>
+                <span>•</span>
+                <span><strong>Class:</strong> TY B.Tech</span>
+                <span>•</span>
+                <span><strong>Semester:</strong> V</span>
+            </div>
+
+            <div class="footer-declaration">
+                AI-Assisted Content Generation Declared | All External Sources Cited | Academic Integrity Maintained
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
