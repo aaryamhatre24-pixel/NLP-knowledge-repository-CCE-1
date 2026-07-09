@@ -5,19 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Section C: Workflows - NLP Repository</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS enhancement to display descriptions elegantly inside the workflow layout */
+        .wf-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            min-width: 140px;
+            text-align: center;
+        }
+        .wf-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted, #a0aec0);
+            margin-top: 6px;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+        .workflow-row {
+            flex-wrap: wrap;
+            gap: 10px 0;
+        }
+    </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-logo"><a href="index.html" style="color:inherit; text-decoration:none;">NLP Repository</a></div>
         <ul class="nav-links">
-<li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="index.html" class="nav-item">Home</a></li>
             <li><a href="SectionA.html" class="nav-item">Section A: Concepts</a></li>
             <li><a href="SectionB.html" class="nav-item">Section B: Comparison</a></li>
             <li><a href="SectionC.html" class="nav-item active">Section C: Workflows</a></li>
             <li><a href="SectionD.html" class="nav-item">Section D: Applications</a></li>
             <li><a href="SectionE.html" class="nav-item">Section E: Research</a></li>
-<li><a href="ComparisonMatrix.html" class="nav-item">Contribution Matrix</a></li>
+            <li><a href="ComparisonMatrix.html" class="nav-item">Contribution Matrix</a></li>
         </ul>
     </nav>
 
@@ -31,17 +54,35 @@
         <h2>Stage 01: Text Preprocessing Workflow</h2>
         <div class="workflow-box">
             <div class="workflow-row">
-                <div class="wf-step">Sentence Segmentation</div>
+                <div class="wf-step">
+                    <strong>Sentence Segmentation</strong>
+                    <span class="wf-desc">Splits long text blocks into distinct sentences.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Tokenization</div>
+                <div class="wf-step">
+                    <strong>Tokenization</strong>
+                    <span class="wf-desc">Breaks sentences into words or subwords.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Noise Removal</div>
+                <div class="wf-step">
+                    <strong>Noise Removal</strong>
+                    <span class="wf-desc">Strips out HTML tags, markup, and structural metadata.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Case Normalization</div>
+                <div class="wf-step">
+                    <strong>Case Normalization</strong>
+                    <span class="wf-desc">Converts all characters uniformly to lower-case.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Stop-word Removal</div>
+                <div class="wf-step">
+                    <strong>Stop-word Removal</strong>
+                    <span class="wf-desc">Filters out common uninformative structural words.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Lemmatization</div>
+                <div class="wf-step">
+                    <strong>Lemmatization</strong>
+                    <span class="wf-desc">Reduces remaining words to canonical base lemmas.</span>
+                </div>
             </div>
         </div>
 
@@ -49,13 +90,25 @@
         <h2>Stage 02: Feature Engineering Workflow</h2>
         <div class="workflow-box">
             <div class="workflow-row">
-                <div class="wf-step">N-Grams</div>
+                <div class="wf-step">
+                    <strong>N-Grams</strong>
+                    <span class="wf-desc">Extracts sequential groupings of n continuous words.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Term Frequency (TF)</div>
+                <div class="wf-step">
+                    <strong>Term Frequency (TF)</strong>
+                    <span class="wf-desc">Tracks the raw density of terms in a document.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Inverse Document Frequency (IDF)</div>
+                <div class="wf-step">
+                    <strong>Inverse Document Freq (IDF)</strong>
+                    <span class="wf-desc">Evaluates word rarity across the broader corpus.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">TF-IDF</div>
+                <div class="wf-step">
+                    <strong>TF-IDF Matrix</strong>
+                    <span class="wf-desc">Combines scores to weight contextually unique words.</span>
+                </div>
             </div>
         </div>
 
@@ -63,13 +116,25 @@
         <h2>Stage 03: Text-to-Vector Workflow</h2>
         <div class="workflow-box">
             <div class="workflow-row">
-                <div class="wf-step">Word2Vec</div>
+                <div class="wf-step">
+                    <strong>Word2Vec</strong>
+                    <span class="wf-desc">Builds static, shallow continuous neural embeddings.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">FastText</div>
+                <div class="wf-step">
+                    <strong>FastText</strong>
+                    <span class="wf-desc">Generates subword embeddings to handle OOV tokens.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Embeddings</div>
+                <div class="wf-step">
+                    <strong>Embeddings</strong>
+                    <span class="wf-desc">Maps semantic features into compact dense vector clusters.</span>
+                </div>
                 <div class="wf-arrow">→</div>
-                <div class="wf-step">Transformer Models</div>
+                <div class="wf-step">
+                    <strong>Transformer Models</strong>
+                    <span class="wf-desc">Utilizes dynamic attention for context-aware states.</span>
+                </div>
             </div>
         </div>
 
@@ -78,7 +143,8 @@
             <a href="SectionD.html" class="ctrl-btn">Next Page</a>
         </div>
     </div>
-<div class="page-container" style="margin-top: 50px;">
+
+    <div class="page-container" style="margin-top: 50px;">
         <footer>
             <div class="footer-title">NLP Repository</div>
             <div class="footer-subtitle">Shah & Anchor Kutchhi Engineering College</div>
